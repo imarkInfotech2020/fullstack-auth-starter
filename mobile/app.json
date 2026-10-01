@@ -1,0 +1,10 @@
+{
+  "name": "iMark Infotech",
+  "description": "React Native Started Kit",
+  "slug": "imark-starter",
+  "iconUrl": "https://github.com/imarkInfotech2020/fullstack-auth-starter/raw/main/mobile/assets/logo_wheel_big.png",
+  "version": "0.3.0",
+  "expo": {
+    "sdkVersion": "25.0.0"
+  }
+}

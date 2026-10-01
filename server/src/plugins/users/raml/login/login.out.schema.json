@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "username": {
+          "type": "string",
+          "format": "username"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "first_name": {
+          "type": "string",
+          "format": "first_name"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "datePast"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "datePast"
+        }
+      },
+      "required": [
+        "id",
+        "username",
+        "email",
+        "first_name",
+        "last_name",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    "token": {
+      "type": "string",
+      "format": "jwtToken"
+    }
+  },
+  "required": ["user", "token"]
+}

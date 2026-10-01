@@ -1,0 +1,61 @@
+{
+  "aws": { "bucketUpload": "{{s3_bucket_upload}}" },
+  "oidc": { "issuer": "{{website_url}}"},
+  "ecs": {
+    "cluster": "{{ecs_cluster}}",
+    "taskDefinition": "{{ecs_taskDefinition}}",
+    "subnets": ["{{ecs_subnet}}"],
+    "securityGroups": ["{{ecs_securityGroup}}"]
+  },
+  "infra": { 
+    "wsUrl": "{{ws_url}}",
+    "docker": { "baseURL": "{{docker_base_url}}" },
+    "containerImage": "{{grucloud_image}}",
+    "localOutputPath": "/home/{{user}}/output",
+    "localInputPath": "/home/{{user}}/input"
+  },
+  "jwtSecret": "{{jwt_secret}}",
+  "db": {
+    "url": "{{db_url}}"
+  },
+  "log": {
+    "console": {
+      "level": "debug",
+      "timestamp": true,
+      "colorize": true
+    }
+  },
+  "authentication":{
+    "facebook":{
+      "clientID": "{{facebook_client_id}}",
+      "clientSecret": "{{facebook_client_secret}}",
+      "callbackURL": "{{website_url}}/api/v1/auth/facebook/callback"
+    },
+    "google":{
+      "clientID": "{{google_client_id}}",
+      "clientSecret": "{{google_client_secret}}",
+      "callbackURL": "{{website_url}}/api/v1/auth/google/callback"
+    },
+    "github":{
+      "clientID": "{{github_client_id}}",
+      "clientSecret": "{{github_client_secret}}",
+      "callbackURL": "{{website_url}}/api/v1/auth/github/callback"
+    },
+     "gitlab":{
+      "clientID": "{{gitlab_client_id}}",
+      "clientSecret": "{{gitlab_client_secret}}",
+      "callbackURL": "{{website_url}}/api/v1/auth/gitlab/callback"
+    }
+  },
+  "mail": {
+    "from": "{{mail_from}}",
+    "signature": "{{mail_signature}}",
+    "smtp": {
+      "service": "{{mail_service}}",
+      "auth": {
+        "user": "{{mail_user}}",
+        "pass": "{{mail_password}}"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "imark-starter",
+  "description": "react + node fullstack starter kit with authentication and authorization, data backed by SQL",
+  "version": "10.17.0",
+  "private": false,
+  "scripts": {
+    "docker:up": "docker-compose up",
+    "install": "echo \"Run the command \"npm install\" in the client and in the server\"",
+    "version": "docker-compose build && docker-compose push",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:imarkInfotech2020/fullstack-auth-starter.git"
+  },
+  "dependencies": {
+    "lerna": "^4.0.0"
+  }
+}

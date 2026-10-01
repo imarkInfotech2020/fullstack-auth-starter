@@ -1,0 +1,58 @@
+version: "3"
+services:
+  pg:
+    image: postgres:16-alpine
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: dev
+      POSTGRES_PASSWORD: password
+    expose:
+      - "5432"
+    ports:
+      - "7432:5432"
+    networks:
+      - net
+
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: your-dockerhub-user/api:v10.41.0
+    expose:
+      - "9000"
+    ports:
+      - "9001:9000"
+    environment:
+      NODE_CONFIG: |
+        {
+          "db": {
+            "url":  "postgres://postgres:password@pg:5432/dev?sslmode=disable"
+          },
+        }
+    links:
+      - pg
+    entrypoint: sh scripts/initialise.sh
+    networks:
+      - net
+
+  ui:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        BUILD_VERSION: "docker compose alpha build"
+    image: your-dockerhub-user/ui:v10.41.0
+    expose:
+      - "3000"
+    ports:
+      - "3001:3000"
+    links:
+      - api
+    depends_on:
+      - api
+    networks:
+      - net
+
+networks:
+  net:

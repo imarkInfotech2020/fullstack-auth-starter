@@ -1,0 +1,15 @@
+.cache
+dist/
+.fusebox
+.idea
+.vagrant
+reports
+
+npm-debug.log*
+node_modules
+build
+
+deploy/keys
+selenium-debug.log
+chromedriver.log
+grucloud-vm-tuto-1.json

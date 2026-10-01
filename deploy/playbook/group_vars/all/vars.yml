@@ -1,0 +1,42 @@
+---
+docker_users: ["docker"]
+home: /home/docker
+user: docker
+docker_directory: docker_data
+docker_install_compose: True
+postgres_directory: pg_data
+pip_install_packages:
+  - name: docker
+
+docker_base_url: "http:/v1.41"
+
+grucloud_image: "grucloud/grucloud-cli:v12.10.2"
+# Docker image tag names
+api_image: "your-dockerhub-user/grucloud-api"
+api_tag: "10.50"
+
+web_image: "your-dockerhub-user/grucloud-ui"
+web_tag: "12.21"
+
+firewall_state: started
+firewall_enabled_at_boot: true
+firewall_allowed_tcp_ports:
+  - "22"
+  - "80"
+  - "443"
+  - "9000"
+
+# Database settings
+
+# External volume
+db_data_dir: "/data/pg_data"
+
+server_name: default
+protocol: "https"
+ssl_admin_email: "hello@yourdomain.com"
+production: "FALSE"
+network: "mainnet"
+
+mail_from: ""
+mail_signature: ""
+mail_service: ""

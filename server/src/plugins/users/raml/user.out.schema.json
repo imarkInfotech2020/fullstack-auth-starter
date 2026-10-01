@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string",
+      "format": "username"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "first_name": {
+      "type": "string",
+      "format": "first_name"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "datePast"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "datePast"
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "biography": {
+          "type": "string"
+        }
+      },
+      "required": ["biography"]
+    }
+  },
+  "required": [
+    "id",
+    "username",
+    "email",
+    "first_name",
+    "last_name",
+    "created_at",
+    "updated_at",
+    "profile"
+  ]
+}
